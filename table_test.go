@@ -381,10 +381,10 @@ func TestTableAlignPostsetting(t *testing.T) {
 		"+-----------+-------+\n" +
 		"| Name      | Value |\n" +
 		"+-----------+-------+\n" +
-		"|       hey | you   |\n" +
-		"|       ken | 1234  |\n" +
-		"|     derek | 3.14  |\n" +
-		"| derek too | 3.15  |\n" +
+		"|       hey |   you |\n" +
+		"|       ken |  1234 |\n" +
+		"|     derek |  3.14 |\n" +
+		"| derek too |  3.15 |\n" +
 		"|  escaping | rox%% |\n" +
 		"+-----------+-------+\n"
 
@@ -398,6 +398,7 @@ func TestTableAlignPostsetting(t *testing.T) {
 	table.AddRow("escaping", "rox%%")
 
 	table.SetAlign(AlignRight, 1)
+	table.SetAlign(AlignRight, 2)
 
 	checkRendersTo(t, table, expected)
 }
